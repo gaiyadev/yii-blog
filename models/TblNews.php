@@ -20,6 +20,7 @@ class TblNews extends \yii\db\ActiveRecord
     {
         return 'tbl_news';
     }
+    
 
     /**
      * {@inheritdoc}
