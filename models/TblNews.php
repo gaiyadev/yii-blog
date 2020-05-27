@@ -27,9 +27,10 @@ class TblNews extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
+            [['title', 'content'], 'required'],
             [['content'], 'string'],
             [['title'], 'string', 'max' => 255],
+            [['content'], 'string', 'max' => 1255],
         ];
     }
 
