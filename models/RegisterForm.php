@@ -15,7 +15,7 @@ public function rules()
 {
     return[
         [['username', 'password', 'password_confirmation'], 'required'],
-         [['username', 'password', 'password_confirmation'], 'string', 'min'=> 4, 'max' => 16],
+         [['username',], 'string', 'min'=> 4, 'max' => 16],
         ['password_confirmation', 'compare', 'compareAttribute' => 'password' ],
     ];
 }
