@@ -7,32 +7,19 @@ use yii\db\ActiveRecord;
 
 class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
-
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
+    /**
+     * This is the model class for table "user".
+     *
+     * @property int $id
+     * @property string $username
+     * @property string $password
+     * @property string $authKey
+     * @property string $accessToken
+     */
 
     public static function tableName()
     {
-        return'user';
+        return 'user';
     }
 
     /**
@@ -62,7 +49,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public static function findByUsername($username)
     {
        // return self::find()->where(['username' => $username])->one(); OR
-        return self::findOne(['accessToken' => $username]);
+        return self::findOne(['username' => $username]);
     }
 
     /**
